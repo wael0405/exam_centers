@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include exam_centers *.css
+recursive-include exam_centers *.csv
+recursive-include exam_centers *.html
+recursive-include exam_centers *.ico
+recursive-include exam_centers *.js
+recursive-include exam_centers *.json
+recursive-include exam_centers *.md
+recursive-include exam_centers *.png
+recursive-include exam_centers *.py
+recursive-include exam_centers *.svg
+recursive-include exam_centers *.txt
+recursive-exclude exam_centers *.pyc
