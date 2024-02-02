@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "autoname": "format:{hall_name}-{exam_center}",
+ "creation": "2023-12-28 22:57:36.531319",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "hall_details_section",
+  "exam_center",
+  "hall_name",
+  "hall_number",
+  "location",
+  "column_break_aaod",
+  "hall_capacity",
+  "actual_capacity",
+  "from",
+  "to",
+  "scalable",
+  "scalable_to",
+  "column_break_yjeu",
+  "status",
+  "note"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "hall_name",
+   "fieldtype": "Data",
+   "label": "Hall Name",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hall Location"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "from",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "From",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "to",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "To",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 5,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Status",
+   "options": "Available\nUnavailable",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exam_center",
+   "fieldtype": "Link",
+   "label": "Exam Center",
+   "options": "Exam Center",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.status=='Unavailable '",
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "label": "Notes",
+   "mandatory_depends_on": "eval:doc.status=='Unavailable '"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "hall_number",
+   "fieldtype": "Int",
+   "label": "Hall Number"
+  },
+  {
+   "fieldname": "column_break_aaod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_yjeu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hall_details_section",
+   "fieldtype": "Section Break",
+   "label": "Hall Details"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "hall_capacity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Hall Capacity",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "doc.number_of_devices",
+   "fieldname": "actual_capacity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Actual Capacity",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.status=='\u063a\u064a\u0631 \u0645\u062a\u0627\u062d'",
+   "fieldname": "scalable",
+   "fieldtype": "Check",
+   "label": "Scalable"
+  },
+  {
+   "depends_on": "eval:doc.scalable==1;",
+   "fieldname": "scalable_to",
+   "fieldtype": "Int",
+   "label": "Scalable To",
+   "mandatory_depends_on": "eval:doc.scalable==1;"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-30 00:57:05.750595",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Exam Hall",
+ "naming_rule": "Expression",
+ "nsm_parent_field": "parent_exam_hall",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_preview_popup": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

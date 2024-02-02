@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "autoname": "format: {subject}--{####}",
+ "creation": "2024-01-01 05:03:02.797867",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_tab",
+  "subject_details_tab",
+  "reservation_type_section",
+  "reservation_type",
+  "column_break_qdbu",
+  "reserve_in_specific_centers",
+  "exam_centers",
+  "exam_type",
+  "section_break_uusm",
+  "academic_year",
+  "user",
+  "column_break_sqct",
+  "entity",
+  "college",
+  "column_break_eekx",
+  "major",
+  "level",
+  "semester",
+  "column_break_zswn",
+  "subject",
+  "doctor_name",
+  "doctor_number",
+  "reservation_details_tab",
+  "\u062a\u0641\u0627\u0635\u064a\u0644_\u0627\u0644\u062d\u062c\u0632_section",
+  "date",
+  "day",
+  "interval",
+  "number_of_student",
+  "exam_time",
+  "status",
+  "notes_tab",
+  "\u0627\u0644\u0642\u0627\u0639\u0627\u062a_\u0627\u0644\u0645\u062d\u062c\u0648\u0632\u0629_\u0644\u0644\u0645\u0627\u062f\u0629_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "label": "Academic Year",
+   "options": "Academic Year",
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Reservation Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Select",
+   "label": "Day",
+   "options": "\u0627\u0644\u0633\u0628\u062a\n\u0627\u0644\u0623\u062d\u062f\n\u0627\u0644\u0627\u062b\u0646\u064a\u0646\n\u0627\u0644\u062b\u0644\u0627\u062b\u0627\u0621\n\u0627\u0644\u0623\u0631\u0628\u0639\u0627\u0621\n\u0627\u0644\u062e\u0645\u064a\u0633"
+  },
+  {
+   "fieldname": "interval",
+   "fieldtype": "Link",
+   "label": "Interval",
+   "options": "Interval"
+  },
+  {
+   "fetch_from": "subject.level",
+   "fetch_if_empty": 1,
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "label": "Level",
+   "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Link",
+   "label": "Subject",
+   "options": "Level Subject",
+   "remember_last_selected_value": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "number_of_student",
+   "fieldtype": "Int",
+   "label": "Number Of Students",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "major.college",
+   "fetch_if_empty": 1,
+   "fieldname": "college",
+   "fieldtype": "Link",
+   "label": "College",
+   "options": "College",
+   "remember_last_selected_value": 1
+  },
+  {
+   "fetch_from": "subject.major",
+   "fetch_if_empty": 1,
+   "fieldname": "major",
+   "fieldtype": "Link",
+   "label": "Major",
+   "options": "Major",
+   "remember_last_selected_value": 1
+  },
+  {
+   "fetch_from": "subject.semester",
+   "fetch_if_empty": 1,
+   "fieldname": "semester",
+   "fieldtype": "Select",
+   "label": "Semester",
+   "options": "First\nSecond"
+  },
+  {
+   "fieldname": "\u062a\u0641\u0627\u0635\u064a\u0644_\u0627\u0644\u062d\u062c\u0632_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u062d\u062c\u0632"
+  },
+  {
+   "fieldname": "\u0627\u0644\u0642\u0627\u0639\u0627\u062a_\u0627\u0644\u0645\u062d\u062c\u0648\u0632\u0629_\u0644\u0644\u0645\u0627\u062f\u0629_section",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0642\u0627\u0639\u0627\u062a \u0627\u0644\u0645\u062d\u062c\u0648\u0632\u0629 \u0644\u0644\u0645\u0627\u062f\u0629"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Waiting For Acceptance\nAccepted\nRejected"
+  },
+  {
+   "fieldname": "doctor_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Doctor Name"
+  },
+  {
+   "fieldname": "doctor_number",
+   "fieldtype": "Data",
+   "label": "Doctor Phone Number"
+  },
+  {
+   "fieldname": "column_break_qdbu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uusm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.status=='Rejected'",
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Reservation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "Details"
+  },
+  {
+   "fieldname": "reservation_type",
+   "fieldtype": "Select",
+   "label": "Reservation Type",
+   "options": "Manual\nAutomated",
+   "sort_options": 1
+  },
+  {
+   "fieldname": "column_break_eekx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zswn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_sqct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exam_type",
+   "fieldtype": "Link",
+   "label": "Exam Type",
+   "options": "Exam Type"
+  },
+  {
+   "fieldname": "subject_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Subject Details",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "reservation_type_section",
+   "fieldtype": "Section Break",
+   "label": "Reservation Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "reserve_in_specific_centers",
+   "fieldtype": "Check",
+   "label": "Reserve In Specific Centers"
+  },
+  {
+   "columns": 10,
+   "depends_on": "eval:doc.reserve_in_specific_centers==1;",
+   "fieldname": "exam_centers",
+   "fieldtype": "Link",
+   "label": "Select Centers",
+   "options": "Exam Center"
+  },
+  {
+   "fieldname": "reservation_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Reservation Details"
+  },
+  {
+   "fieldname": "notes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Notes",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fetch_from": "college.entity",
+   "fetch_if_empty": 1,
+   "fieldname": "entity",
+   "fieldtype": "Link",
+   "label": "Entity",
+   "options": "Entity",
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "exam_time",
+   "fieldtype": "Link",
+   "label": "Exam Time",
+   "options": "Level Subject",
+   "remember_last_selected_value": 1,
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Reservation Hall",
+   "link_fieldname": "reservation",
+   "table_fieldname": "hall"
+  }
+ ],
+ "modified": "2024-01-30 01:53:00.086668",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Reservation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-25 21:51:15.458498",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "interval_system",
+  "interval_name",
+  "from",
+  "to",
+  "duration"
+ ],
+ "fields": [
+  {
+   "fieldname": "interval_system",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Interval System",
+   "options": "Intervals System",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interval_name",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Interval",
+   "options": "First\nSecond\nThird\nFourth\nFifth\nSixth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Int",
+   "label": "Duration",
+   "non_negative": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-29 23:57:49.311260",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Interval",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

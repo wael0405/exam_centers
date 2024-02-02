@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "field:entity_name",
+ "creation": "2023-12-28 23:06:56.432388",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "entity_name",
+  "phone",
+  "is_academic_entity"
+ ],
+ "fields": [
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "Entity Name",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_academic_entity",
+   "fieldtype": "Check",
+   "label": "Is Academic Entity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-29 22:45:53.374789",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Entity",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

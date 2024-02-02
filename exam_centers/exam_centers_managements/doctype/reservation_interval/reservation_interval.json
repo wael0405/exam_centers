@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "autoname": "format:{academic_year} --{semester}",
+ "creation": "2024-01-02 20:23:33.628510",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "academic_year",
+  "semester",
+  "start_new_interval",
+  "close_interval",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "options": "Academic Year"
+  },
+  {
+   "fieldname": "semester",
+   "fieldtype": "Select",
+   "label": "Semester",
+   "options": "First\nSeconed"
+  },
+  {
+   "depends_on": "eval:doc.status=='Start';",
+   "fieldname": "start_new_interval",
+   "fieldtype": "Button",
+   "label": "Start New Interval"
+  },
+  {
+   "depends_on": "eval:doc.status=='Opened';",
+   "fieldname": "close_interval",
+   "fieldtype": "Button",
+   "label": "Close Interval"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Start\nOpened\nClosed",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-30 00:12:25.433484",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Reservation Interval",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

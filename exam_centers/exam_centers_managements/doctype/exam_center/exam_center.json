@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:center_name",
+ "creation": "2023-12-28 22:29:03.954948",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "\u0628\u064a\u0627\u0646\u0627\u062a_\u0627\u0644\u0645\u0631\u0643\u0632_\u0627\u0644\u0627\u0645\u062a\u062d\u0627\u0646\u064a_section",
+  "center_name",
+  "center_number",
+  "location",
+  "priority",
+  "column_break_hayc",
+  "capacity",
+  "actual_capacity",
+  "number_of_halls",
+  "useable_halls",
+  "column_break_tshk",
+  "status",
+  "open_access",
+  "available_from",
+  "available_to",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "center_name",
+   "fieldtype": "Data",
+   "label": "Center Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Available\nUnavailable",
+   "read_only": 1,
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Center Location"
+  },
+  {
+   "depends_on": "eval:doc.status!='\u0645\u062a\u0627\u062d';",
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "center_number",
+   "fieldtype": "Int",
+   "label": "Center Number",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "in_filter": 1,
+   "in_preview": 1,
+   "label": "Capacity",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_capacity",
+   "fieldtype": "Int",
+   "in_filter": 1,
+   "in_preview": 1,
+   "label": "Actual Capacity",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "number_of_halls",
+   "fieldtype": "Int",
+   "label": "Number Of Halls",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "useable_halls",
+   "fieldtype": "Int",
+   "label": "Number Of Useable Halls",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.open_access==0 && doc.status=='Available';",
+   "fieldname": "available_from",
+   "fieldtype": "Date",
+   "label": "Available From",
+   "mandatory_depends_on": "eval:doc.open_access==0 && doc.status=='Available';"
+  },
+  {
+   "depends_on": "eval:doc.open_access==0 && doc.status=='Available';",
+   "fieldname": "available_to",
+   "fieldtype": "Date",
+   "label": "Available To",
+   "mandatory_depends_on": "eval:doc.open_access==0 && doc.status=='Available';"
+  },
+  {
+   "fieldname": "\u0628\u064a\u0627\u0646\u0627\u062a_\u0627\u0644\u0645\u0631\u0643\u0632_\u0627\u0644\u0627\u0645\u062a\u062d\u0627\u0646\u064a_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0632 \u0627\u0644\u0627\u0645\u062a\u062d\u0627\u0646\u064a"
+  },
+  {
+   "fieldname": "column_break_hayc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tshk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "open_access",
+   "fieldtype": "Check",
+   "label": "Open Access"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-30 00:58:14.274343",
+ "modified_by": "Administrator",
+ "module": "Exam Centers Managements",
+ "name": "Exam Center",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
